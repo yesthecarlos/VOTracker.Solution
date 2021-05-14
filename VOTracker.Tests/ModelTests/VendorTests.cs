@@ -16,8 +16,17 @@ namespace TrackerApp.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test");
+      Vendor newVendor = new Vendor("test", "test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
+    [TestMethod]
+    public void GetName_ReturnsName_strong()
+    {
+      string name = "Major's";
+      string description = "burger place";
+      Vendor newVendor = new Vendor(name, description);
+      string result = newVendor.Name;
+      Assert.AreEqual(name, result);
     }
   }
 }
