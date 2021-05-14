@@ -20,7 +20,7 @@ namespace TrackerApp.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
-    public void GetName_ReturnsName_strong()
+    public void GetName_ReturnsName_string()
     {
       string name = "Major's";
       string description = "burger place";
@@ -28,5 +28,18 @@ namespace TrackerApp.Tests
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
+    [TestMethod]
+      public void SetDescription_SetDescription_String()
+      {
+        string name = "Major's";
+        string description = "burger place";
+        Vendor newVendor = new Vendor(name, description);
+
+        string updatedDescription = "#1 Burger Place in town";
+        newVendor.Description = updatedDescription;
+        string result = newVendor.Description;
+
+        Assert.AreEqual(updatedDescription, result);
+      }
   }
 }
