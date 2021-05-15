@@ -41,5 +41,20 @@ namespace TrackerApp.Tests
 
         Assert.AreEqual(updatedDescription, result);
       }
+    [TestMethod]
+      public void GetAll_ReturnsVendors_VendorList()
+      {
+        string name01 = "Major's";
+        string description01 = "#1 Burger Place in town";
+        string name02 = "Essencia";
+        string description02 = "#1 Sandwich Place in town";
+        Vendor newVendor1 = new Vendor(name01, description01);
+        Vendor newVendor2 = new Vendor(name02, description02);
+        List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+
+        List<Vendor> result = Vendor.GetAll();
+
+        CollectionAssert.AreEqual(newList, result);
+      }
   }
 }
